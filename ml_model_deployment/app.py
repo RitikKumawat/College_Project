@@ -17,5 +17,5 @@ def predict_price():
     result = model.predict(np.array([year,mpg,engine]).reshape(1,3))
     return render_template('index.html',result=result)
 if __name__ == "__main__":
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=8080)
+    app.run(debug=True)
+
