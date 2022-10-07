@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>PRice Prediction BMW</title>
+    <link rel="stylesheet"  href="{{ url_for('static',filename='style.css') }}" >
+    
 </head>
+
 <body>
     <h1>Price Pedictor</h1>
+    
+    <h1>Select Car's model year, MPG- mileage and Engine Size</h3>
+    <br><br>
     {% if result%}
-        <p>{{ result }}</p>
+        <p> The Predicted Price is {{ result }} USD </p>
     {% endif %}
+    <br><br>
     <form method="POST" action="/predict">
         <label>Year</label><br>
         <input type="text" name="year" ><br><br>
@@ -21,5 +28,7 @@
 
         <input type="submit" value="Predict"><br><br>
     </form>
+    
 </body>
+
 </html>
